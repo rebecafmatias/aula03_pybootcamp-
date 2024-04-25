@@ -15,7 +15,24 @@ forem positivos ou "Dados inválidos" caso contrário."""
 """Exercício 2: Classificação de Dados de Sensor
 Imagine que você está trabalhando com dados de sensores IoT. 
 Os dados incluem medições de temperatura. Você precisa classificar cada leitura 
-como 'Baixa', 'Normal' ou 'Alta'. Considerando que:"""
+como 'Baixa', 'Normal' ou 'Alta'. Considerando que:
+
+    Temperatura < 18°C é 'Baixa'
+    Temperatura >= 18°C e <= 26°C é 'Normal'
+    Temperatura > 26°C é 'Alta'
+
+"""
+
+# temp = 200
+
+# if temp < 18:
+#     temp_categoria = 'Baixa'
+# elif temp >= 18 and temp <= 26:
+#     temp_categoria = 'Normal'
+# elif temp > 26:
+#     temp_categoria = 'Alta'
+
+# print(temp_categoria)
 
 """Exercício 3: Filtragem de Logs por Severidade
 Você está analisando logs de uma aplicação e precisa filtrar mensagens 
@@ -23,6 +40,11 @@ com severidade 'ERROR'. Dado um registro de log em formato de dicionário
 como `log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 
 'Falha na conexão'}`, 
 escreva um programa que imprima a mensagem se a severidade for 'ERROR'."""
+
+# try:
+#     salario = float(input('Digite seu salário: '))
+# except Exception as ex:
+#     print(ex)
 
 """Exercício 4: Validação de Dados de Entrada
 Antes de processar os dados de usuários em um sistema de recomendação, 
@@ -40,22 +62,22 @@ suspeita."""
 """Exercício 6. Contagem de Palavras em Textos
 Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele."""
 
-texto = 'Hoje é nossa terceira aula, é uma aula muito boa'
-novo_texto = texto.replace(',','').lower()
+# texto = 'Hoje é nossa terceira aula, é uma aula muito boa'
+# novo_texto = texto.replace(',','').lower()
 
-palavras = novo_texto.split()
+# palavras = novo_texto.split()
 
-print(palavras)
+# print(palavras)
 
-contagem_palavras = {}
+# contagem_palavras = {}
 
-for palavra in palavras:
-    if palavra in contagem_palavras:
-        contagem_palavras[palavra] += 1
-    else:
-        contagem_palavras[palavra] = 1
+# for palavra in palavras:
+#     if palavra in contagem_palavras:
+#         contagem_palavras[palavra] += 1
+#     else:
+#         contagem_palavras[palavra] = 1
 
-print(contagem_palavras)
+# print(contagem_palavras)
 
 """Exercício 7. Normalização de Dados
 Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1."""
