@@ -219,8 +219,57 @@ while numero_final == None:
 Simular o consumo de uma API paginada, onde cada "página" de dados é processada 
 em loop até que não haja mais páginas."""
 
+paginas = [{'key_': 'pagina1','data': '2023-01-01', 'content': 'fjojsfsjflsjflsjf'},
+    {'key_': 'pagina2','data': '2023-01-03', 'content': 'kfpsfslflsnnn'},
+    {'key_': 'pagina3','data': '2023-01-05', 'content': 'nnvdnvdnvod'}]
+
+tabela_final = []
+
+for pagina in paginas:
+    tabela_final.append(pagina)
+    print(tabela_final)
+
+
 """Exercício 14. Tentativas de Conexão
 Simular tentativas de reconexão a um serviço com um limite máximo de tentativas."""
 
+tentativa = 2
+tentativa_max = 5
+conexao_funcionou = True
+
+while tentativa <= tentativa_max:
+    print(f'Tentativa {tentativa} de {tentativa_max}')
+    if conexao_funcionou == True:
+        print('Tentativa bem sucedida')
+        break
+    tentativa_max += 1
+else: 
+    print('Você excedeu a quantidade de tentativas permitida')
+    
+
 """Exercício 15. Processamento de Dados com Condição de Parada
 Processar itens de uma lista até encontrar um valor específico que indica a parada."""
+
+# from datetime import datetime
+
+meses = ['2024-01-01', '2024-01-03', '2024-01-04', '2024-01-02', '2024-01-06', '2024-01-05']
+
+meses.sort()
+
+mes_cast = []
+
+# for i in meses:
+#     i = datetime.strptime(i, '%Y-%m-%d').date()
+#     mes_cast.append(i)
+
+# mes_cast.sort()
+
+i = 0 
+
+while i < len(meses):
+    if meses[i] == '2024-01-06':
+        print('Parada')
+        break
+    else:
+        print(f'Processando mes {meses[i]}')
+        i += 1
