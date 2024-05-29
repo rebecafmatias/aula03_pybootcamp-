@@ -4,8 +4,8 @@ que todos os registros tenham valores positivos para `quantidade` e `preço`.
 Escreva um programa que verifique esses campos e imprima "Dados válidos" se ambos 
 forem positivos ou "Dados inválidos" caso contrário."""
 
-# quantidade = 10
-# preco = 20
+# quantidade = int(input("Quantidade: "))
+# preco = float(input("Preço: "))
 
 # if quantidade > 0 and preco > 0:
 #     print('Dados válidos')
@@ -20,10 +20,9 @@ como 'Baixa', 'Normal' ou 'Alta'. Considerando que:
     Temperatura < 18°C é 'Baixa'
     Temperatura >= 18°C e <= 26°C é 'Normal'
     Temperatura > 26°C é 'Alta'
-
 """
 
-# temp = 200
+# temp = float(input("Temperatura: "))
 
 # if temp < 18:
 #     temp_categoria = 'Baixa'
@@ -47,12 +46,6 @@ escreva um programa que imprima a mensagem se a severidade for 'ERROR'."""
 # if log['level'] == 'ERROR':
 #     print(log['message'])
 
-######
-
-# try:
-#     salario = float(input('Digite seu salário: '))
-# except Exception as ex:
-#     print(ex)
 
 """Exercício 4: Validação de Dados de Entrada
 Antes de processar os dados de usuários em um sistema de recomendação, 
@@ -78,14 +71,14 @@ a R$ 10.000 ou se ocorrer fora do horário comercial (antes das 9h ou depois das
 Dada uma transação como `transacao = {'valor': 12000, 'hora': 20}`, verifique se ela é 
 suspeita."""
 
-transacao = {'valor': 12000, 'hora': 20}
+# transacao = {'valor': 12000, 'hora': 20}
 
-if transacao['valor'] > 10000:
-    print('Transação suspeita')
-elif transacao['hora'] < 9:
-    print('Transação suspeita')
-elif transacao['hora'] > 18:
-    print('Transação suspeita')
+# if transacao['valor'] > 10000:
+#     print('Transação suspeita')
+# elif transacao['hora'] < 9:
+#     print('Transação suspeita')
+# elif transacao['hora'] > 18:
+#     print('Transação suspeita')
 
 """Exercício 6. Contagem de Palavras em Textos
 Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele."""
@@ -110,26 +103,118 @@ Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele
 """Exercício 7. Normalização de Dados
 Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1."""
 
+# numeros = [10,15,30,45,11]
+# num_normalizados = []
+# print(numeros)
+
+# for i in numeros:
+#     num_normalizados.append((i - min(numeros)) / (max(numeros) - min(numeros)))
+# print(num_normalizados)
+
+
 """Exercício 8. Filtragem de Dados Faltantes
 Objetivo:** Dada uma lista de dicionários representando dados de usuários, 
 filtrar aqueles que têm um campo específico faltando"""
 
+# lista = [
+#     {'nome': 'Rebeca',
+#      'idade': 26,
+#      'email': 'rebeca@gmail.com',
+#      'profissao': 'Analista de dados'},
+#      {'nome': 'Isabella',
+#      'idade': 24,
+#      'email': '',
+#      'profissao': 'Assistente administrativo'},
+#      {'nome': 'Raquel',
+#      'idade': '',
+#      'email': 'raquel@gmail.com',
+#      'profissao': 'Militar'}
+# ]
+
+# dados_faltantes = {}
+
+# for i in lista:
+#     if i['idade'] == '':
+#         print(f"Idade do usário {i['nome']} faltando")
+#         dados_faltantes.update({i['nome']:'idade'})
+#     elif i['email'] == '':
+#         print(f"Email do usário {i['nome']} faltando") 
+#         dados_faltantes.update({i['nome']:'email'})
+#     elif i['profissao'] == '':
+#         print(f"Profissão do usário {i['nome']} faltando") 
+#         dados_faltantes.update({i['nome']:'profissao'})
+
+# print(dados_faltantes)
+    
 """Exercício 9. Extração de Subconjuntos de Dados
 Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares."""
+
+# lista = [10,5,12,13,25,6,20]
+# lista_pares = []
+
+# for i in lista:
+#     if i % 2 == 0:
+#         lista_pares.append(i)
+
+# print(f'Numeros pares: {lista_pares}')
 
 """Exercício 10. Agregação de Dados por Categoria
 Objetivo:** Dado um conjunto de registros de vendas, 
 calcular o total de vendas por categoria."""
+
+# vendas = [
+#     {'key':'venda01','produto': 2000, 'servico': 150, 'consultoria':0},
+#     {'key':'venda02','produto': 1500, 'servico': 200, 'consultoria':0},
+#     {'key':'venda03','produto': 300, 'servico': 200, 'consultoria':1500}
+# ]
+
+# vendas_consolidado = {}
+
+# for venda in vendas:
+#     for tipo_venda, valor in venda.items():
+#         if tipo_venda != 'key':
+#             if tipo_venda in vendas_consolidado:
+#                 vendas_consolidado[tipo_venda] += valor
+#             else:
+#                 vendas_consolidado[tipo_venda] = valor
+
+# print(vendas_consolidado)
+
 
 ### Exercícios com WHILE
 
 """Exercício 11. Leitura de Dados até Flag
 Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida."""
 
+# entrada = input("Palavra: ")
+
+# while entrada != 'sair':
+#     entrada = input('Você digitou a palavra errada. Tente novamente: ')
+
+
 """Exercício 12. Validação de Entrada
 Solicitar ao usuário um número dentro de um intervalo específico até que a entrada 
 seja válida."""
 
+numero = None
+numero_final = None
+
+while numero == None:
+    try:
+        numero = int(input('Digite um número de 1 a 5: ').strip())
+    except ValueError:
+        print('Você digitou o número em formato incorreto. Informe o número inteiro sem vírgulas ou pontos.')
+        numero = None
+
+while numero_final == None:
+    try:
+        while numero > 5 or numero < 1:
+            numero = int(input('Número digitado está fora do padrão (1 a 5). Tente novamente: ').strip())
+            numero_final = numero
+    except ValueError:
+        print('Você digitou o número em formato incorreto. Informe o número inteiro sem vírgulas ou pontos.')
+        numero_final = None
+        
 """Exercício 13. Consumo de API Simulado
 Simular o consumo de uma API paginada, onde cada "página" de dados é processada 
 em loop até que não haja mais páginas."""
